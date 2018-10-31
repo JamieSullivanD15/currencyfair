@@ -5,7 +5,6 @@ class App extends Component {
     return (
       <div>
         <h1>CurrencyFair React UI</h1>
-        <p>This is to test Github integration</p>
       </div>
     );
   }
