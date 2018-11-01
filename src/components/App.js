@@ -4,7 +4,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <h1>CurrencyFair React UI</h1>
+        <h1>React UI</h1>
       </div>
     );
   }

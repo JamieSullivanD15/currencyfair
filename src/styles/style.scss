@@ -1,1 +1,19 @@
-@import 'test';
+
+// ------- ITCSS -------
+// Settings - variables, fonts 
+@import './settings/settings';
+
+// Tools - media-queries, mixins 
+@import './tools/tools';
+
+// Elements - bare unclassed HTML elements 
+@import './elements/elements';
+
+// Structure - grids, wrappers, containers
+@import './structure/structure';
+
+// Components - custom UI elements
+@import './components/components';
+
+// Utilities - overrides, is-active, is-hidden
+@import './utilities/utilities';
