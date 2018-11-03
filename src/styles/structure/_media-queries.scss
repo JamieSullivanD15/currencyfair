@@ -1,0 +1,57 @@
+
+/* Laptop */
+@media (max-width: $laptop-bp) {
+  .detail {
+    margin-left: 20px;
+  }
+
+  .transaction {
+    margin-right: 20px;
+  }
+}
+
+/* Tablet */
+@media (max-width: $tablet-bp) {
+  .detail {
+    grid-column: 8 / span 5;
+    margin-left: 10px;
+  }
+
+  .transaction {
+    grid-column: 2 / span 6;
+    grid-row: 2 / span 1;
+    margin-right: 10px;
+  }
+
+  .logo {
+    grid-column: 2 / span 4;
+  }
+}
+
+/* Phone */
+@media (max-width: $phone-bp) {
+  .detail {
+    margin: 61px 0 0 0;
+    grid-column: 7 / span 6;
+    margin-left: 0px;
+  }
+
+  .transaction {
+    margin: 61px 0 0 0;
+    grid-column: 1 / span 6;
+  }
+
+  .logo {
+    grid-column: 1 / span 6;
+  }
+
+  .main {
+    grid-column: 1 / span 6;
+    grid-row: 2 / span 1;
+  }
+
+  .sidebar {
+    grid-column: 7 / span 6;
+    grid-row: 2 / span 1;
+  }
+}

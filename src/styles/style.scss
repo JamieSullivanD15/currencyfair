@@ -1,12 +1,12 @@
 
 // ------- ITCSS -------
-// Settings - variables, fonts 
+// Settings - variables, fonts
 @import './settings/settings';
 
-// Tools - media-queries, mixins 
+// Tools - mixins
 @import './tools/tools';
 
-// Elements - bare unclassed HTML elements 
+// Elements - bare unclassed HTML elements
 @import './elements/elements';
 
 // Structure - grids, wrappers, containers

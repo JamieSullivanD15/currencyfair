@@ -1,4 +1,9 @@
 import React, { Component } from 'react';
+import Tab from './Tab';
+import Header from './Header';
+import Input from './Input';
+import NextButton from './NextButton';
+import Footer from './Footer';
 
 class Transaction extends Component {
   // {this.props.exchangeRate}
@@ -6,7 +11,11 @@ class Transaction extends Component {
   render() {
     return (
       <div className="transaction">
-        Transaction
+        <Tab />
+        <Header />
+        <Input />
+        <NextButton />
+        <Footer />
       </div>
     );
   }
