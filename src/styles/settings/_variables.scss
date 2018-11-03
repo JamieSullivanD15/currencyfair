@@ -1,1 +1,28 @@
-$test: blue;
+
+// Screen Sizes
+$laptop-bp: 1400px;
+$tablet-bp: 900px;
+$phone-bp: 600px;
+
+// Colors
+$header-color: #32323C;
+$primary-blue: #6ec0e6;
+
+// Transaction Colors
+$tab-active-color: $primary-blue;
+$tab-unactive-color: #e2f2fa;
+$transaction-active-bg-color: #fafdfe;
+$transaction-active-border-color: $primary-blue;
+$transaction-unactive-border-color: #e6e6e6;
+$button-color: $primary-blue;
+$button-border-color: #589ab8;
+
+// Sidebar Colors
+$sidebar-detail-border-color: #e0e0e0;
+$sidebar-bg-color: #fbfbfb;
+$sidebar-amount-saved-text-color: #ffc766;
+
+// Text Colors
+$bold-text-color: #212121;
+$light-text-color: #9E9E9E;
+$link-text-color: #64b5f6;
