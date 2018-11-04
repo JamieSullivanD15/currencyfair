@@ -23,7 +23,10 @@ class App extends Component {
   constructor(props) {
   super(props);
     this.state = {
-      exchangeRate: 60
+      sendingAmount: 2000,
+      exchangeRate: 0.86022,
+      fee: 2.50,
+      deliveryDate: '25th November'
     };
   }
 
@@ -34,7 +37,9 @@ class App extends Component {
         <Logo />
         <Main />
         <Transaction />
-        <Detail />
+        <Detail
+          transactionDetails={this.state}
+        />
         <Sidebar />
       </div>
     );

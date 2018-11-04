@@ -1,0 +1,35 @@
+
+.detail-sending-header {
+  background-color: blue;
+  min-height: 54px;
+  align-items: center;
+}
+
+.detail-sending-amount {
+  background-color: orange;
+  min-height: 54px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.receiving-detail-header {
+  background-color: teal;
+  min-height: 54px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.receiving-detail-info {
+  background-color: navy;
+  min-height: 36px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.receiving-detail-footer {
+  background-color: violet;
+  min-height: 54px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}

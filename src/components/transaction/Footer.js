@@ -2,12 +2,12 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <div className="transaction-footer">
-        <p>
+    <div className="transaction-footer row">
+        <p className="col">
           @2016 CurrencyFair
         </p>
-        <p>
-          Help & Support &nbsp;&nbsp; Legal Stuff
+        <p className="col">
+          Help & Support &nbsp; Legal Stuff
         </p>
     </div>
   );
