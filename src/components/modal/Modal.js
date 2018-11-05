@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from './Header';
 import Main from './Main';
-import Input from './Input';
+import Footer from './Footer';
 
 const Modal = ({ handleCloseModal, show }) => {
   const showHideClassName = show ? "modal show-modal" : "modal hide-modal";
@@ -19,8 +19,8 @@ const Modal = ({ handleCloseModal, show }) => {
 
       <section className="modal-container col">
         <Header />
-
         <Main />
+        <Footer />
       </section>
     </div>
   );

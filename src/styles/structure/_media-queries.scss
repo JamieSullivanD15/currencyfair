@@ -18,8 +18,16 @@
 /* Tablet */
 @media (max-width: $tablet-bp) {
   .modal-container {
-    width: 55%;
+    width: 65%;
     height: 50%;
+  }
+
+  .modal-main-input {
+    .input-box {
+      width: 45px;
+      height: 45px;
+      font-size: 32px;
+    }
   }
 
   .detail {
@@ -41,8 +49,20 @@
 /* Phone */
 @media (max-width: $phone-bp) {
   .modal-container {
-    width: 85%;
+    width: 98%;
     height: 50%;
+  }
+
+  .modal-main-input {
+    margin-top: 26px;
+    margin-bottom: 16px;
+
+    .input-box {
+      width: 38px;
+      height: 38px;
+      font-size: 28px;
+      margin: 0 3px;
+    }
   }
 
   .detail {

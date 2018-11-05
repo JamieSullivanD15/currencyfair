@@ -4,15 +4,13 @@ import Input from './Input';
 const Main = () => {
   return (
     <div className="modal-main col">
-      <div className="row">
+      <div className="modal-main-top row">
         Enter the code sent via SMS to +353 872251177
       </div>
 
-      <div className="row">
-        <Input />
-      </div>
+      <Input />
 
-      <div className="row">
+      <div className="modal-main-bottom row">
         <p className="col">
           Receive as new code
         </p>

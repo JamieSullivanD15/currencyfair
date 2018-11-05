@@ -33,7 +33,7 @@ const Input = () => {
   }
 
   return (
-    <div className="modal-input row">
+    <div className="modal-main-input row">
       {inputs}
     </div>
   );
