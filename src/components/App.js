@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Modal from './modal/Modal';
 import Transaction from './transaction/Transaction';
 import Detail from './detail/Detail';
 
@@ -21,26 +22,50 @@ function Sidebar(props) {
 
 class App extends Component {
   constructor(props) {
-  super(props);
+    super(props);
+
     this.state = {
-      sendingAmount: 2000,
-      exchangeRate: 0.86022,
-      fee: 2.50,
-      deliveryDate: '25th November'
+      transactionDetails: {
+        sendingAmount: 2000,
+        exchangeRate: 0.86022,
+        fee: 2.50,
+        deliveryDate: '25th November'
+      },
+      showModal: false
     };
+
+    this.showModal = this.showModal.bind(this);
+    this.hideModal = this.hideModal.bind(this);
+  }
+
+  showModal() {
+    this.setState({ showModal: true });
+  }
+
+  hideModal() {
+    this.setState({ showModal: false });
   }
 
   render() {
     return (
-      <div className="app-container">
-        <Header />
-        <Logo />
-        <Main />
-        <Transaction />
-        <Detail
-          transactionDetails={this.state}
+      <div className="app">
+        <Modal
+          show={this.state.showModal}
+          handleCloseModal={this.hideModal}
         />
-        <Sidebar />
+
+        <div className="container">
+          <Header />
+          <Logo />
+          <Main />
+          <Transaction
+            handleOpenModal={this.showModal}
+          />
+          <Detail
+            transactionDetails={this.state.transactionDetails}
+          />
+          <Sidebar />
+        </div>
       </div>
     );
   }

@@ -1,6 +1,11 @@
 
 /* Laptop */
 @media (max-width: $laptop-bp) {
+  .modal-container {
+    width: 45%;
+    height: 50%;
+  }
+
   .detail {
     margin-left: 20px;
   }
@@ -12,6 +17,11 @@
 
 /* Tablet */
 @media (max-width: $tablet-bp) {
+  .modal-container {
+    width: 55%;
+    height: 50%;
+  }
+
   .detail {
     grid-column: 8 / span 5;
     margin-left: 10px;
@@ -30,6 +40,11 @@
 
 /* Phone */
 @media (max-width: $phone-bp) {
+  .modal-container {
+    width: 85%;
+    height: 50%;
+  }
+
   .detail {
     margin: 61px 0 0 0;
     grid-column: 7 / span 6;

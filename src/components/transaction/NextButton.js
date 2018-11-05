@@ -1,15 +1,12 @@
 import React from 'react';
 
-function openModal() {
-  console.log('Open Modal Clicked');
-}
-
-const NextButton = () => {
+const NextButton = ({handleOpenModal}) => {
   return (
     <div>
       <button
-        onClick={openModal}
-        className="button transaction-next-button">
+        className="button transaction-next-button"
+        onClick={handleOpenModal}
+      >
         Next
       </button>
     </div>

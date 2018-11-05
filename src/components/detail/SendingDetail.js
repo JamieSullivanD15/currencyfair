@@ -2,7 +2,7 @@ import React from 'react';
 
 function Header() {
   return (
-    <div className="detail-sending-header row">
+    <div className="sending-detail-header row">
       Sending Details
     </div>
   );
@@ -10,7 +10,7 @@ function Header() {
 
 function SendingAmount(props) {
   return (
-    <div className="detail-sending-amount row">
+    <div className="sending-detail-amount row">
       <p className="col">You Send</p>
       <p className="col">€{props.sendingAmount.toFixed(2)}</p>
     </div>

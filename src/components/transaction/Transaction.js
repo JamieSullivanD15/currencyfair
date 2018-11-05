@@ -5,20 +5,19 @@ import Input from './Input';
 import NextButton from './NextButton';
 import Footer from './Footer';
 
-class Transaction extends Component {
-  // {this.props.exchangeRate}
+const Transaction = (props) => {
 
-  render() {
-    return (
-      <div className="transaction">
-        <Tab />
-        <Header />
-        <Input />
-        <NextButton />
-        <Footer />
-      </div>
-    );
-  }
+  return (
+    <div className="transaction">
+      <Tab />
+      <Header />
+      <Input />
+      <NextButton
+        handleOpenModal={props.handleOpenModal}
+      />
+      <Footer />
+    </div>
+  );
 }
 
 export default Transaction;
