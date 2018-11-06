@@ -7,11 +7,11 @@ const Footer = (props) => {
     <div className="row">
       <div className="row">
         <button
-          className="modal-verify-identity btn">
+          className="btn modal-verify-identity">
           Verify Identity
         </button>
         <button
-          className="modal-back btn"
+          className="btn modal-back"
           onClick={props.backClick}>
           Back
         </button>

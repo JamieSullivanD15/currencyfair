@@ -4,7 +4,7 @@ const NextButton = ({handleOpenModal}) => {
   return (
     <div>
       <button
-        className="transaction-next btn"
+        className="btn transaction-next"
         onClick={handleOpenModal}
       >
         Next
