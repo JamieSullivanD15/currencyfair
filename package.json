@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/JamieSullivanD15/currencyfair#readme",
   "dependencies": {
+    "axios": "^0.18.0",
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
     "serve": "^10.0.2"

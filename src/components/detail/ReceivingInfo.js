@@ -1,7 +1,8 @@
 import React from 'react';
 
 const ReceivingInfo = (props) => {
-  const recipientGets = (props.sendingAmount * props.exchangeRate) - props.fee;
+  // console.log(props);
+  let recipientGets = (props.sendingAmount * props.exchangeRate) - props.fee;
 
   return (
     <div className="col">

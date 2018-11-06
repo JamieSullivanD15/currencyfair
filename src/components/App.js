@@ -1,24 +1,13 @@
 import React, { Component } from 'react';
+import axios from 'axios';
+
+import Header from './structure/Header';
+import Logo from './structure/Logo';
+import Main from './structure/Main';
+import Sidebar from './structure/Sidebar';
 import Modal from './modal/Modal';
 import Transaction from './transaction/Transaction';
 import Detail from './detail/Detail';
-
-function Header(props) {
-  // <img  src={require("../assets/logo.svg")}></img>
-  return <header className="header">Header</header>;
-}
-
-function Logo(props) {
-  return <main className="logo">Logo</main>;
-}
-
-function Main(props) {
-  return <main className="main">Main</main>;
-}
-
-function Sidebar(props) {
-  return <aside className="sidebar">Sidebar</aside>;
-}
 
 class App extends Component {
   constructor(props) {
@@ -27,16 +16,36 @@ class App extends Component {
     this.state = {
       transactionDetails: {
         sendingAmount: 2000,
-        exchangeRate: 0.86022,
+        exchangeRate: 0,
         fee: 2.50,
-        deliveryDate: '25th November'
+        deliveryDate: '25th November',
       },
       showModal: false
     };
 
+    this.getCurrencyRate = this.getCurrencyRate.bind(this);
     this.showModal = this.showModal.bind(this);
     this.hideModal = this.hideModal.bind(this);
     this.outsideModalClick = this.outsideModalClick.bind(this);
+  }
+
+  componentDidMount() {
+    this.getCurrencyRate('EUR', 'GBP');
+  }
+
+  getCurrencyRate(from, to) {
+    const URL =`https://api.exchangeratesapi.io/latest?base=${from}&symbols=${to}`;
+    let transactionDetails = Object.assign({}, this.state.transactionDetails);
+    let rate = 0;
+
+    axios.get(URL).then(res => {
+      // Get first property of rates data which will be currency that is converted
+      rate = res.data.rates[Object.keys(res.data.rates)[0]];
+      transactionDetails.exchangeRate = rate;
+      this.setState(prevState => {
+        return { transactionDetails }
+      });
+    });
   }
 
   showModal() {
@@ -51,6 +60,7 @@ class App extends Component {
     e.preventDefault();
     if (e.target.className === 'modal show-modal') this.hideModal();
   }
+
 
   render() {
     return (

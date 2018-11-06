@@ -28,18 +28,3 @@ const Footer = (props) => {
 };
 
 export default Footer;
-
-
-// <button
-//   className="modal-verify-identity btn">
-//   Verify Identity
-// </button>
-// <button
-//   className="modal-back btn">
-//   Back
-// </button>
-//
-//
-// <div className="col">
-// I can't access this mobile device
-// </div>
