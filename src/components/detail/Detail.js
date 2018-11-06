@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 import SendingDetail from './SendingDetail'
 ;
 import ReceivingDetail from './ReceivingDetail'

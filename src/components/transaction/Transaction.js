@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 import Tab from './Tab';
 import Header from './Header';
 import Input from './Input';
@@ -11,7 +12,10 @@ const Transaction = (props) => {
     <div className="transaction">
       <Tab />
       <Header />
-      <Input />
+      <Input
+        sendingAmount={props.transactionDetails.sendingAmount}
+        exchangeRate={props.transactionDetails.exchangeRate}
+      />
       <NextButton
         handleOpenModal={props.handleOpenModal}
       />

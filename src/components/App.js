@@ -77,6 +77,7 @@ class App extends Component {
           <Main />
           <Transaction
             handleOpenModal={this.showModal}
+            transactionDetails={this.state.transactionDetails}
           />
           <Detail
             transactionDetails={this.state.transactionDetails}
