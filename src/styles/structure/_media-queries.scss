@@ -1,11 +1,6 @@
 
 /* Laptop */
 @media (max-width: $laptop-bp) {
-  .modal-container {
-    width: 45%;
-    height: 50%;
-  }
-
   .detail {
     margin-left: 20px;
   }
@@ -18,17 +13,16 @@
 /* Tablet */
 @media (max-width: $tablet-bp) {
   .modal-container {
-    width: 65%;
-    height: 50%;
+    width: 600px;
   }
 
-  .modal-main-input {
-    .input-box {
-      width: 45px;
-      height: 45px;
-      font-size: 32px;
-    }
-  }
+  // .modal-main-input {
+  //   .input-box {
+  //     width: 45px;
+  //     height: 45px;
+  //     font-size: 32px;
+  //   }
+  // }
 
   .detail {
     grid-column: 8 / span 5;
@@ -49,7 +43,7 @@
 /* Phone */
 @media (max-width: $phone-bp) {
   .modal-container {
-    width: 98%;
+    width: 95%;
     height: 50%;
   }
 
@@ -58,10 +52,10 @@
     margin-bottom: 16px;
 
     .input-box {
-      width: 38px;
-      height: 38px;
+      width: 36px;
+      height: 36px;
       font-size: 28px;
-      margin: 0 3px;
+      margin: 0 2px;
     }
   }
 

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Footer = () => {
+const Footer = (props) => {
   return (
     <div className="modal-footer col">
 
@@ -11,7 +11,8 @@ const Footer = () => {
           Verify Identity
         </button>
         <button
-          className="modal-back btn">
+          className="modal-back btn"
+          onClick={props.backClick}>
           Back
         </button>
       </div>

@@ -3,24 +3,20 @@ import Header from './Header';
 import Main from './Main';
 import Footer from './Footer';
 
-const Modal = ({ handleCloseModal, show }) => {
+const Modal = ({ show, handleCloseModal, handleOutsideClick }) => {
   const showHideClassName = show ? "modal show-modal" : "modal hide-modal";
-
-  function outsideClick(e) {
-    e.preventDefault();
-    const target = e.target.className.split(' ');
-    if (target.length >= 2) handleCloseModal();
-  }
 
   return (
     <div
       className={showHideClassName}
-      onClick={outsideClick}>
+      onClick={handleOutsideClick}>
 
       <section className="modal-container col">
         <Header />
         <Main />
-        <Footer />
+        <Footer
+          backClick={handleCloseModal}
+        />
       </section>
     </div>
   );

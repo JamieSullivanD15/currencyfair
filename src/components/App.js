@@ -36,6 +36,7 @@ class App extends Component {
 
     this.showModal = this.showModal.bind(this);
     this.hideModal = this.hideModal.bind(this);
+    this.outsideModalClick = this.outsideModalClick.bind(this);
   }
 
   showModal() {
@@ -46,12 +47,18 @@ class App extends Component {
     this.setState({ showModal: false });
   }
 
+  outsideModalClick(e) {
+    e.preventDefault();
+    if (e.target.className === 'modal show-modal') this.hideModal();
+  }
+
   render() {
     return (
       <div className="app">
         <Modal
           show={this.state.showModal}
           handleCloseModal={this.hideModal}
+          handleOutsideClick={this.outsideModalClick}
         />
 
         <div className="container">
