@@ -13,6 +13,10 @@ const Transaction = (props) => {
       <Tab />
       <Header />
       <Input
+        class={'transaction-input-sending col'}
+        imgSrc={require('../../assets/europe.png')}
+        label={'You Send'}
+        symbol={'€'}
         sendingAmount={props.transactionDetails.sendingAmount}
         exchangeRate={props.transactionDetails.exchangeRate}
       />

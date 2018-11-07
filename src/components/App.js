@@ -21,6 +21,7 @@ class App extends Component {
         deliveryDate: '25th November',
       },
       showModal: false
+      // savings compared to bank - 66.19 / 1717.94 = 0.03852 * 100 = 3.85%
     };
 
     this.getCurrencyRate = this.getCurrencyRate.bind(this);
