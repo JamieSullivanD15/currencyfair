@@ -7,18 +7,25 @@ import NextButton from './NextButton';
 import Footer from './Footer';
 
 const Transaction = (props) => {
-
   return (
     <div className="transaction">
       <Tab />
       <Header />
       <Input
-        class={'transaction-input-sending col'}
+        class={'transaction-sending'}
         imgSrc={require('../../assets/europe.png')}
         label={'You Send'}
         symbol={'€'}
-        sendingAmount={props.transactionDetails.sendingAmount}
-        exchangeRate={props.transactionDetails.exchangeRate}
+        amount={props.sendingAmount}
+        handleSubmit={props.submitInput}
+      />
+      <Input
+        class={'transaction-receiving'}
+        imgSrc={require('../../assets/europe.png')}
+        label={'Receiver Gets'}
+        symbol={'£'}
+        amount={props.recipientGets}
+        handleSubmit={props.submitInput}
       />
       <NextButton
         handleOpenModal={props.handleOpenModal}

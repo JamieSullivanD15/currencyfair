@@ -9,10 +9,14 @@ const Detail = (props) => {
   return (
     <div className="detail">
       <SendingDetail
-        sendingAmount={props.transactionDetails.sendingAmount}
+        sendingAmount={props.sendingAmount}
       />
       <ReceivingDetail
-        transactionDetails={props.transactionDetails}
+        exchangeRate={props.exchangeRate}
+        fee={props.fee}
+        deliveryDate={props.deliveryDate}
+        recipientGets={props.recipientGets}
+        savings={props.savings}
       />
     </div>
   );

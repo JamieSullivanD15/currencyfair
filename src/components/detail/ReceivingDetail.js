@@ -3,7 +3,7 @@ import React from 'react';
 import ReceivingInfo from './ReceivingInfo'
 ;
 
-function Header() {
+function Header(props) {
   return (
     <div className="receiving-detail-header row">
       <p className="col">Receiving Details</p>
@@ -12,10 +12,10 @@ function Header() {
   );
 }
 
-function Footer() {
+function Footer(props) {
   return (
     <div className="receiving-detail-footer row">
-      You save £66.19 compared to your bank!
+      You save £{props.savings.toFixed(2)} compared to your bank!
     </div>
   );
 }
@@ -25,12 +25,15 @@ const ReceivingDetail = (props) => {
     <div className="receiving-detail">
       <Header />
       <ReceivingInfo
-        sendingAmount={props.transactionDetails.sendingAmount}
-        exchangeRate={props.transactionDetails.exchangeRate}
-        fee={props.transactionDetails.fee}
-        deliveryDate={props.transactionDetails.deliveryDate}
+        sendingAmount={props.sendingAmount}
+        exchangeRate={props.exchangeRate}
+        fee={props.fee}
+        deliveryDate={props.deliveryDate}
+        recipientGets={props.recipientGets}
       />
-      <Footer />
+      <Footer
+        savings={props.savings}
+      />
     </div>
   );
 };

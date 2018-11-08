@@ -1,45 +1,56 @@
 import React from 'react';
 
-function getValue(e) {
+function checkInput(e) {
   e.preventDefault();
-  let input = e.target.children[2];
-  console.log(input.value);
+  // Prevent numbers greater than 9 digits
+  if (e.target.value.length > 9) e.target.value = e.target.value.slice(0, 9);
 }
 
-function checkLength(e) {
-  e.preventDefault();
-  if (e.target.value.length > 9) {
-    e.target.value = e.target.value.slice(0, 9);
-  }
-}
-
-function test(e, test) {
-  // console.log(test);
-  let container = document.querySelector( ".transaction-input" );
-
-  if (isLocalNode( container, e.target )) {
-    container.classList.add('transaction-input-active');
-  }
-}
-
-function isLocalNode( node, target ) {
-  while ( target && ( target.nodeType !== Node.ELEMENT_NODE ) ) {
+function isLocalNode(node, target) {
+  while (target && (target.nodeType !== Node.ELEMENT_NODE)) {
     target = target.parentNode;
   }
-
-  return node.contains( target ) ? true : false;
+  return node.contains(target) ? true : false;
 }
 
+function applyActive(e, containerClass) {
+  e.preventDefault();
+  // Get container that was clicked, input field and first child to apply active class
+  let container = document.querySelector(`.${containerClass}`);
+  let input = document.querySelector(`.${containerClass}-input`);
+  let child = container.children[0];
+
+  // Check if the element that was clicked is a child of the container
+  if (isLocalNode(container, e.target)) {
+    // Remove the active class from opposite input
+    if (container.className === 'transaction-sending') {
+      document.querySelector('.transaction-receiving').children[0].classList.remove('transaction-input-active');
+    } else if (container.className === 'transaction-receiving') {
+      document.querySelector('.transaction-sending').children[0].classList.remove('transaction-input-active');
+    }
+    // Apply active class and focus on container input field
+    child.classList.add('transaction-input-active');
+    input.focus();
+    input.select();
+  }
+}
 
 const Input = (props) => {
   return (
-      <a onClick={(e) => test(e, props.label)} className={props.class}>
-
-        <form className="row">
+    <a onClick={(e) => applyActive(e, props.class)} className={props.class}>
+      <div className="transaction-input-container col">
+        <form className={`${props.class}-form row`} onSubmit={(e) => props.handleSubmit(e, props.class)}>
           <div>
             {props.label} <br/>
             {props.symbol}
-            <input></input>
+            <input
+              min="3"
+              step="0.01"
+              type="number"
+              onChange={checkInput}
+              defaultValue={props.amount.toFixed(2)}
+              className={`${props.class}-input`}>
+            </input>
           </div>
 
           <div className="transaction-input-flag-container col">
@@ -49,7 +60,8 @@ const Input = (props) => {
             </img>
           </div>
         </form>
-      </a>
+      </div>
+    </a>
   );
 };
 

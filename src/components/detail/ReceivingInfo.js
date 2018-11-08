@@ -1,9 +1,6 @@
 import React from 'react';
 
 const ReceivingInfo = (props) => {
-  // console.log(props);
-  let recipientGets = (props.sendingAmount * props.exchangeRate) - props.fee;
-
   return (
     <div className="col">
       <div className="receiving-detail-info row">
@@ -20,7 +17,7 @@ const ReceivingInfo = (props) => {
       </div>
       <div className="receiving-detail-info row">
         <p className="col">Recipient Gets</p>
-        <p className="col">£{recipientGets.toFixed(2)}</p>
+        <p className="col">£{props.recipientGets.toFixed(2)}</p>
       </div>
     </div>
   );
