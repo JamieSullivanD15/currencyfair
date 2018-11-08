@@ -96,8 +96,9 @@ class App extends Component {
   submitInput(e, containerClass) {
     e.preventDefault();
     let input = document.querySelector(`.${containerClass}-input`);
-    input.value = Math.abs(input.value).toFixed(2);
-    let amount = Number(input.value);
+    let amount = 0
+    input.value = Math.abs(input.value);
+    amount = Number(input.value);
 
     if (containerClass === 'transaction-sending') {
       this.setState(prevState => {

@@ -14,3 +14,17 @@ input[type=number]::-webkit-outer-spin-button {
 input[type=number] {
   -moz-appearance: textfield;
 }
+
+button {
+  cursor: pointer;
+}
+
+input:invalid {
+  box-shadow: none;
+}
+
+form {
+  justify-content: space-between;
+  align-items: center;
+  // flex-wrap: wrap-reverse;
+}

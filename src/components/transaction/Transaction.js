@@ -13,7 +13,7 @@ const Transaction = (props) => {
       <Header />
       <Input
         class={'transaction-sending'}
-        imgSrc={require('../../assets/europe.png')}
+        imgSrc={require('../../assets/eur-symbol.png')}
         label={'You Send'}
         symbol={'€'}
         amount={props.sendingAmount}
@@ -21,7 +21,7 @@ const Transaction = (props) => {
       />
       <Input
         class={'transaction-receiving'}
-        imgSrc={require('../../assets/europe.png')}
+        imgSrc={require('../../assets/gbp-symbol.png')}
         label={'Receiver Gets'}
         symbol={'£'}
         amount={props.recipientGets}

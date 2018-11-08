@@ -66,23 +66,19 @@
     background-color: transparent;
     outline: none;
   }
-
-  form {
-    justify-content: space-between;
-    align-items: center;
-    // flex-wrap: wrap-reverse;
-  }
 }
 
 .transaction-input-flag-container {
-  background-color: orange;
-  min-width: 60px;
-  justify-content: flex-end;
-  border-radius: 15px 0px 0px 15px;
+  background-color: white;
+  min-width: 70px;
+  justify-content: center;
+  border-radius: 50px 6px 6px 50px;
+  padding: 9px;
+  // margin-right: 5px;
 
   .transaction-input-flag {
     align-self: center;
-    max-width: 30px;
+    max-width: 70px;
   }
 }
 
