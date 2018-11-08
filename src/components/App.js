@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Provider, connect } from 'react-redux';
+import { getRate } from '../actions/rateActions';
 
 import Header from './structure/Header';
 import Logo from './structure/Logo';
@@ -8,6 +10,8 @@ import Sidebar from './structure/Sidebar';
 import Modal from './modal/Modal';
 import Transaction from './transaction/Transaction';
 import Detail from './detail/Detail';
+
+import store from'../store';
 
 class App extends Component {
   constructor(props) {
@@ -37,7 +41,7 @@ class App extends Component {
 
   componentDidMount() {
     // Get rate for EUR to GBP
-    this.getCurrencyRate('EUR', 'GBP');
+    this.props.getRate('EUR', 'GBP');
   }
 
   // Call exchange rates API
@@ -53,6 +57,7 @@ class App extends Component {
 
   // Calculate recipient amount when user enters sending amount
   calculateRecipientGets(amount) {
+    console.log(this.props.rate);
     // recipientGets = (sending * rate) - fee
     let recipientGets = ((amount * this.state.exchangeRate) - this.state.fee);
     let recipientInput = document.querySelector('.transaction-receiving-input');
@@ -164,4 +169,8 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapStateToProps = state => ({
+  rate: state.rate.value
+});
+
+export default connect (mapStateToProps, { getRate } )(App);
