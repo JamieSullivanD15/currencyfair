@@ -1,1 +1,7 @@
 export const GET_RATE = 'GET_RATE';
+
+export const SHOW_MODAL = 'SHOW_MODAL';
+export const HIDE_MODAL = 'HIDE_MODAL';
+
+export const SET_SENDING_AMOUNT = 'SET_SENDING_AMOUNT';
+export const SET_RECEIVING_AMOUNT = 'SET_RECEIVING_AMOUNT';

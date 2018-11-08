@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import axios from 'axios';
 import { Provider, connect } from 'react-redux';
-import { getRate } from '../actions/rateActions';
 
 import Header from './structure/Header';
 import Logo from './structure/Logo';
@@ -12,6 +12,10 @@ import Transaction from './transaction/Transaction';
 import Detail from './detail/Detail';
 
 import store from'../store';
+import { getRate } from '../actions/rateActions';
+import { showModal, hideModal } from '../actions/modalActions';
+import { setSendingAmount, setReceivingAmount } from '../actions/transactionActions';
+
 
 class App extends Component {
   constructor(props) {
@@ -34,8 +38,8 @@ class App extends Component {
     this.calculateSendingAmount = this.calculateSendingAmount.bind(this);
     this.calculateSavings = this.calculateSavings.bind(this);
     this.submitInput = this.submitInput.bind(this);
-    this.showModal = this.showModal.bind(this);
-    this.hideModal = this.hideModal.bind(this);
+    // this.showModal = this.showModal.bind(this);
+    // this.hideModal = this.hideModal.bind(this);
     this.outsideModalClick = this.outsideModalClick.bind(this);
   }
 
@@ -57,7 +61,6 @@ class App extends Component {
 
   // Calculate recipient amount when user enters sending amount
   calculateRecipientGets(amount) {
-    console.log(this.props.rate);
     // recipientGets = (sending * rate) - fee
     let recipientGets = ((amount * this.state.exchangeRate) - this.state.fee);
     let recipientInput = document.querySelector('.transaction-receiving-input');
@@ -99,48 +102,46 @@ class App extends Component {
 
   // Called when user enters value into sending or recieving input field
   submitInput(e, containerClass) {
+    console.log(this.props);
     e.preventDefault();
     let input = document.querySelector(`.${containerClass}-input`);
-    let amount = 0
-    input.value = Math.abs(input.value);
+    let amount = 0;
+    input.value = Math.abs(input.value).toFixed(2);
     amount = Number(input.value);
 
+
     if (containerClass === 'transaction-sending') {
-      this.setState(prevState => {
-        return { sendingAmount: amount }
-      });
+      // this.setState(prevState => {
+      //   return { sendingAmount: amount }
+      // });
+
+      this.props.setSendingAmount(amount);
 
       this.calculateRecipientGets(amount);
 
     } else if (containerClass === 'transaction-receiving')  {
-      this.setState(prevState => {
-        return { recipientGets: amount }
-      });
+      // this.setState(prevState => {
+      //   return { recipientGets: amount }
+      // });
+
+      this.props.setReceivingAmount(amount);
 
       this.calculateSendingAmount(amount);
     }
   }
 
-  showModal() {
-    this.setState({ showModal: true });
-  }
-
-  hideModal() {
-    this.setState({ showModal: false });
-  }
-
   // Close modal if area outside has been clicked
   outsideModalClick(e) {
     e.preventDefault();
-    if (e.target.className === 'modal show-modal') this.hideModal();
+    if (e.target.className === 'modal show-modal') this.props.hideModal();
   }
 
   render() {
     return (
       <div className="app">
         <Modal
-          show={this.state.showModal}
-          handleCloseModal={this.hideModal}
+          show={this.props.show}
+          handleCloseModal={this.props.hideModal}
           handleOutsideClick={this.outsideModalClick}
         />
 
@@ -149,17 +150,17 @@ class App extends Component {
           <Logo />
           <Main />
           <Transaction
-            handleOpenModal={this.showModal}
-            sendingAmount={this.state.sendingAmount}
-            recipientGets={this.state.recipientGets}
+            handleOpenModal={this.props.showModal}
+            sendingAmount={this.props.sending}
+            recipientGets={this.props.receiving}
             submitInput={this.submitInput}
           />
           <Detail
-            sendingAmount={this.state.sendingAmount}
+            sendingAmount={this.props.sending}
             exchangeRate={this.state.exchangeRate}
             fee={this.state.fee}
             deliveryDate={this.state.deliveryDate}
-            recipientGets={this.state.recipientGets}
+            recipientGets={this.props.receiving}
             savings={this.state.savings}
           />
           <Sidebar />
@@ -169,8 +170,29 @@ class App extends Component {
   }
 }
 
+App.propTypes = {
+  getRate: PropTypes.func.isRequired,
+  showModal: PropTypes.func.isRequired,
+  hideModal: PropTypes.func.isRequired,
+  setSendingAmount: PropTypes.func.isRequired,
+  setReceivingAmount: PropTypes.func.isRequired,
+  rate: PropTypes.number.isRequired,
+  show: PropTypes.bool.isRequired,
+  sending: PropTypes.number.isRequired,
+  receiving: PropTypes.number.isRequired
+}
+
 const mapStateToProps = state => ({
-  rate: state.rate.value
+  rate: state.rate.value,
+  show: state.modal.show,
+  sending: state.transaction.sending,
+  receiving: state.transaction.receiving
 });
 
-export default connect (mapStateToProps, { getRate } )(App);
+export default connect (mapStateToProps, {
+  getRate,
+  showModal,
+  hideModal,
+  setSendingAmount,
+  setReceivingAmount
+})(App);

@@ -10,10 +10,3 @@ export const getRate = (from, to) => (dispatch) => {
     payload: res.data.rates[Object.keys(res.data.rates)[0]]
   }));
 }
-
-// export function loadArticles() {
-//   return {
-//     type: LOAD_ARTICLES,
-//     url:'./api/articles.json',
-//   };
-// }
