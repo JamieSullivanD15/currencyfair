@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
 // Add focus to the next field when the user has entered an input
 function nextField(e) {
@@ -41,4 +43,8 @@ const InputBox = (props) => {
   );
 };
 
-export default InputBox;
+InputBox.propTypes = {
+  id: PropTypes.number.isRequired
+}
+
+export default connect (null, {})(InputBox);

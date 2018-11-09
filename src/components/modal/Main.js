@@ -1,11 +1,14 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+
 import Input from './Input';
 
-const Main = () => {
+const Main = (props) => {
   return (
     <div className="modal-main col">
       <div className="modal-main-top row">
-        Enter the code sent via SMS to +353 872251177
+        Enter the code sent via SMS to {props.numberPrefix}{props.userNumber}
       </div>
 
       <Input />
@@ -22,4 +25,14 @@ const Main = () => {
   );
 };
 
-export default Main;
+Main.propTypes = {
+  userNumber: PropTypes.string.isRequired,
+  numberPrefix: PropTypes.string.isRequired
+}
+
+const mapStateToProps = state => ({
+  userNumber: state.modal.userNumber,
+  numberPrefix: state.modal.numberPrefix
+});
+
+export default connect (mapStateToProps, {})(Main);

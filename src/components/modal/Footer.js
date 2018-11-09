@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
 const Footer = (props) => {
   return (
@@ -26,4 +28,8 @@ const Footer = (props) => {
   );
 };
 
-export default Footer;
+Footer.propTypes = {
+  handleBackClick: PropTypes.func.isRequired
+}
+
+export default connect (null, {})(Footer);

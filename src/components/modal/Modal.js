@@ -6,7 +6,7 @@ import Header from './Header';
 import Main from './Main';
 import Footer from './Footer';
 
-import { showModal, hideModal } from '../../actions/modalActions';
+import { hideModal } from '../../actions/modalActions';
 
 // Close modal if area outside modal container was clicked
 function handleOutsideClick(e, props) {

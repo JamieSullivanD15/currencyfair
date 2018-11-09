@@ -1,7 +1,9 @@
 import { SHOW_MODAL, HIDE_MODAL } from '../actions/types';
 
 const initialState = {
-  show: false
+  show: false,
+  userNumber: '872251177',
+  numberPrefix: '+353 '
 }
 
 export default function(state = initialState, action) {

@@ -4,7 +4,8 @@ import {
   SET_SENDING_INPUT,
   SET_RECEIVING_INPUT,
   CALCULATE_SENDING_AMOUNT,
-  CALCULATE_RECEIVING_AMOUNT
+  CALCULATE_RECEIVING_AMOUNT,
+  CALCULATE_SAVINGS
 } from './types';
 
 export const setSendingAmount = (amount) => (dispatch) => {
@@ -56,5 +57,15 @@ export const calculateReceivingAmount = (amount, rate, fee) => (dispatch) => {
   dispatch({
     type: CALCULATE_RECEIVING_AMOUNT,
     payload: amount
+  });
+}
+
+// Savings = (receiving / 100) * savingsPercent
+export const calculateSavings = (receiving, savingsPercent) => (dispatch) => {
+  let savings = (receiving / 100) * savingsPercent;
+
+  dispatch({
+    type: CALCULATE_SAVINGS,
+    payload: savings
   });
 }

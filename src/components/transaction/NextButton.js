@@ -1,11 +1,15 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
-const NextButton = ({handleOpenModal}) => {
+import { showModal } from '../../actions/modalActions';
+
+const NextButton = (props) => {
   return (
     <div>
       <button
         className="btn transaction-next"
-        onClick={handleOpenModal}
+        onClick={props.showModal}
       >
         Next
       </button>
@@ -13,4 +17,10 @@ const NextButton = ({handleOpenModal}) => {
   );
 };
 
-export default NextButton;
+NextButton.propTypes = {
+  showModal: PropTypes.func.isRequired
+}
+
+export default connect (null, {
+  showModal
+})(NextButton);

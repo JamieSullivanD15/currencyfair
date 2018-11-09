@@ -8,8 +8,6 @@ import Input from './Input';
 import NextButton from './NextButton';
 import Footer from './Footer';
 
-import { showModal } from '../../actions/modalActions';
-
 const Transaction = (props) => {
   return (
     <div className="transaction">
@@ -31,16 +29,13 @@ const Transaction = (props) => {
         name={'receivingInput'}
         value={props.receivingInput}
       />
-      <NextButton
-        handleOpenModal={props.showModal}
-      />
+      <NextButton />
       <Footer />
     </div>
   );
 }
 
 Transaction.propTypes = {
-  showModal: PropTypes.func.isRequired,
   sendingInput: PropTypes.any.isRequired,
   receivingInput: PropTypes.any.isRequired
 }
@@ -50,6 +45,4 @@ const mapStateToProps = state => ({
   receivingInput: state.transaction.receivingInput
 });
 
-export default connect (mapStateToProps, {
-  showModal
-})(Transaction);
+export default connect (mapStateToProps, {})(Transaction);

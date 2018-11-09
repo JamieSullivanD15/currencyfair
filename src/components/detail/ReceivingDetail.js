@@ -1,7 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-import ReceivingInfo from './ReceivingInfo'
-;
+import ReceivingInfo from './ReceivingInfo';
 
 function Header(props) {
   return (
@@ -25,11 +25,10 @@ const ReceivingDetail = (props) => {
     <div className="receiving-detail">
       <Header />
       <ReceivingInfo
-        sendingAmount={props.sendingAmount}
-        exchangeRate={props.exchangeRate}
+        rate={props.rate}
         fee={props.fee}
         deliveryDate={props.deliveryDate}
-        recipientGets={props.recipientGets}
+        receiving={props.receiving}
       />
       <Footer
         savings={props.savings}
@@ -37,5 +36,13 @@ const ReceivingDetail = (props) => {
     </div>
   );
 };
+
+ReceivingDetail.propTypes = {
+  rate: PropTypes.number.isRequired,
+  fee: PropTypes.number.isRequired,
+  deliveryDate: PropTypes.string.isRequired,
+  receiving: PropTypes.number.isRequired,
+  savings: PropTypes.number.isRequired
+}
 
 export default ReceivingDetail;

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Logo = (props) => {
+const Logo = () => {
   return (
     <div className="logo">Logo</div>
   );

@@ -11,10 +11,12 @@ import {
   calculateReceivingAmount
 } from '../../actions/transactionActions';
 
+// User may click on multiple elements within input container, check if the element is a child of the container
 function isLocalNode(node, target) {
   while (target && (target.nodeType !== Node.ELEMENT_NODE)) {
     target = target.parentNode;
   }
+
   return node.contains(target) ? true : false;
 }
 
@@ -27,6 +29,7 @@ function applyActive(e, containerClass) {
 
   // Check if the element that was clicked is a child of the container
   if (isLocalNode(container, e.target)) {
+
     // Remove the active class from opposite input
     if (container.className === 'transaction-sending') {
       document.querySelector('.transaction-receiving').children[0].classList.remove('transaction-input-active');
@@ -53,12 +56,15 @@ function handleChange(e, props) {
 function handleSubmit(e, props) {
   e.preventDefault();
 
+  // Remove active class and focus when submitted
+  let input = document.querySelector(`.${props.class}-input`);
   let container = document.querySelector(`.${props.class}`);
   container.children[0].classList.remove('transaction-input-active');
+  input.blur();
 }
 
 function changeValues(value, props) {
-  // If the user is entering values into sending input
+  // If the user is entering values in sending input
   if (props.class === 'transaction-sending') {
     // Set the input value that is being changed
     props.setSendingInput(value);
@@ -69,13 +75,14 @@ function changeValues(value, props) {
       props.setSendingAmount(0);
       props.setReceivingAmount(0);
     } else {
-      // If not empty calculate values based on user input
+      // If input is not empty, calculate values based on user input
       value = parseFloat(value);
+      props.setSendingInput(value);
       props.setSendingAmount(value);
       props.calculateReceivingAmount(value, props.rate, props.fee);
     }
 
-  // If the user is entering values into receiving input
+  // If the user is entering values in receiving input
   } else if (props.class === 'transaction-receiving') {
     props.setReceivingInput(value);
 
@@ -85,6 +92,7 @@ function changeValues(value, props) {
       props.setReceivingAmount(0);
     } else {
       value = parseFloat(value);
+      props.setReceivingInput(value);
       props.setReceivingAmount(value);
       props.calculateSendingAmount(value, props.rate, props.fee);
     }
@@ -132,7 +140,15 @@ Input.propTypes = {
   setSendingInput: PropTypes.func.isRequired,
   setReceivingInput: PropTypes.func.isRequired,
   calculateSendingAmount: PropTypes.func.isRequired,
-  calculateReceivingAmount: PropTypes.func.isRequired
+  calculateReceivingAmount: PropTypes.func.isRequired,
+  rate: PropTypes.number.isRequired,
+  fee: PropTypes.number.isRequired,
+  class: PropTypes.string.isRequired,
+  imgSrc: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
+  symbol: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  value: PropTypes.number.isRequired
 }
 
 const mapStateToProps = state => ({
