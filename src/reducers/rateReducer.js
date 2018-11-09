@@ -1,7 +1,7 @@
 import { GET_RATE } from '../actions/types';
 
 const initialState = {
-  value: 0
+  value: 0.86022
 }
 
 export default function(state = initialState, action) {

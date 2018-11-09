@@ -1,6 +1,10 @@
 import React from 'react';
 
 const ReceivingInfo = (props) => {
+  // if ((props.recipientGets === null) || (isNaN(props.recipientGets))) {
+  //   console.log('error');
+  // }
+
   return (
     <div className="col">
       <div className="receiving-detail-info row">
