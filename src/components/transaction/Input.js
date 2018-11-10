@@ -11,7 +11,7 @@ import {
   calculateReceivingAmount
 } from '../../actions/transactionActions';
 
-// User may click on multiple elements within input container, check if the element is a child of the container
+// User may click on multiple elements within input container, check if the element clicked is a child of the container
 function isLocalNode(node, target) {
   while (target && (target.nodeType !== Node.ELEMENT_NODE)) {
     target = target.parentNode;

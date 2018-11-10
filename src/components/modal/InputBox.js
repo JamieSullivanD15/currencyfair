@@ -4,6 +4,14 @@ import { connect } from 'react-redux';
 
 // Add focus to the next field when the user has entered an input
 function nextField(e) {
+  const REG = /^\d+$/;
+
+  // Don't allow input or navigate to next field if value is not a number
+  if (!(e.target.value.match(REG))) {
+    e.target.value = e.target.value.replace(e.target.value, '');
+    return;
+  }
+
   // Get id of active input and add 1 to get the next input
   let currentId = Number(e.target.id.split('-')[1]);
   let nextInput = document.querySelector('#input-' + (currentId + 1));
@@ -13,8 +21,17 @@ function nextField(e) {
   nextInput.focus();
 }
 
-// Check if input fields are complete when there is a change
-function checkInput() {
+// Check if user has entered more than one number prevent it if so
+function checkLength(e) {
+  if (e.target.value.length > 1) {
+    e.target.value = e.target.value.slice(0, 1);
+  }
+}
+
+// Check if input fields are complete when user enters input
+function checkIfComplete(e) {
+  e.preventDefault();
+
   let btn = document.querySelector('.modal-verify-identity');
   let modalInput = document.querySelector('.modal-main-input');
   let children = modalInput.children;
@@ -33,11 +50,12 @@ function checkInput() {
 const InputBox = (props) => {
   return (
     <input
-      type="text"
+      type="number"
       className="input-box"
       maxLength="1"
-      onKeyPress={nextField}
-      onChange={checkInput}
+      onKeyUp={nextField}
+      onChange={checkLength}
+      onInput={checkIfComplete}
       id={'input-' + props.id}>
     </input>
   );
