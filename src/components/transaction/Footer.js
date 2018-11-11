@@ -4,10 +4,11 @@ const Footer = () => {
   return (
     <div className="transaction-footer row">
         <p className="col">
-          @2016 CurrencyFair
+          &copy; 2016 CurrencyFair
         </p>
-        <p className="col">
-          Help & Support &nbsp; Legal Stuff
+        <p className="row">
+          <a href="#">Help & Support</a> &nbsp;&nbsp;&nbsp;
+          <a href="#">Legal Stuff</a>
         </p>
     </div>
   );

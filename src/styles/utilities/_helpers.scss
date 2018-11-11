@@ -8,8 +8,11 @@
 }
 
 .transaction-input-active {
-  background-color: maroon;
-  color: yellow;
+  background-color: $transaction-active-bg-color;
+
+  .transaction-input-label {
+    color: $primary-blue;
+  }
 }
 
 .show-modal {

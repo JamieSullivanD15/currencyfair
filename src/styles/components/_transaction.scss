@@ -1,17 +1,14 @@
 
 .transaction {
   margin-top: 61px;
-  color: white;
-  background-color: teal;
+  color: $bold-text-color;
+  background-color: white;
 }
 
 .transaction-tab {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  background-color: orange;
   min-height: 54px;
   align-items: center;
-  text-align: center;
+  justify-content: space-around;
 
   .tab1 {
 
@@ -39,10 +36,7 @@
 }
 
 .transaction-header {
-  display: flex;
-  flex-direction: column;
   min-height: 125px;
-  background-color: violet;
   justify-content: center;
 }
 
@@ -54,11 +48,45 @@
   }
 }
 
+.transaction-sending {
+  .transaction-input-container {
+    border: 2px solid $sidebar-detail-border-color;
+    border-bottom: 1px solid $sidebar-detail-border-color;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+  }
+}
+
+.transaction-receiving {
+  .transaction-input-container {
+    border: 2px solid $sidebar-detail-border-color;
+    border-top: 1px solid $sidebar-detail-border-color;
+    border-radius: 0 0 5px 5px;
+    overflow: hidden;
+  }
+}
+
 .transaction-input-container {
   min-height: 96px;
   justify-content: center;
+  padding: 0 20px;
+
+  .transaction-input-label {
+    text-transform: uppercase;
+    color: $light-text-color;
+    font-family: 'PostGrotesk-Book';
+  }
+
+  .transaction-input-symbol {
+    color: $bold-text-color;
+    font-family: 'PostGrotesk-Medium';
+    font-size: 24px;
+  }
 
   input {
+    color: $bold-text-color;
+    font-family: 'PostGrotesk-Medium';
+    font-size: 24px;
     max-width: 100px;
     border: none;
     margin-left: 10px;
@@ -69,12 +97,12 @@
 }
 
 .transaction-input-flag-container {
-  background-color: white;
+  background-color: $sidebar-bg-color;
   min-width: 70px;
   justify-content: center;
-  border-radius: 50px 6px 6px 50px;
+  border-radius: 50px 8px 8px 50px;
+  border: 1px solid $sidebar-detail-border-color;
   padding: 9px;
-  // margin-right: 5px;
 
   .transaction-input-flag {
     align-self: center;
@@ -90,8 +118,21 @@
 
 .transaction-footer {
   min-height: 31px;
-  background-color: purple;
   margin-top: 60px;
+  border-top: 1px solid $sidebar-detail-border-color;
   align-items: center;
   justify-content: space-between;
+
+  p {
+    color: $light-text-color;
+    margin-top: 10px;
+    font-size: 12px;
+  }
+
+  a {
+    &:hover {
+      color: $button-border-color;
+      text-decoration: underline;
+    }
+  }
 }

@@ -4,6 +4,9 @@ $laptop-bp: 1400px;
 $tablet-bp: 1000px;
 $phone-bp: 600px;
 
+// Padding
+$sidebar-padding: 0 20px;
+
 // Colors
 $header-color: #32323C;
 $primary-blue: #6ec0e6;
@@ -11,7 +14,7 @@ $primary-blue: #6ec0e6;
 // Transaction Colors
 $tab-active-color: $primary-blue;
 $tab-unactive-color: #e2f2fa;
-$transaction-active-bg-color: #fafdfe;
+$transaction-active-bg-color: #FAFDFE;
 $transaction-active-border-color: $primary-blue;
 $transaction-unactive-border-color: #e6e6e6;
 $button-color: $primary-blue;
@@ -19,8 +22,10 @@ $button-border-color: #589ab8;
 
 // Sidebar Colors
 $sidebar-detail-border-color: #e0e0e0;
-$sidebar-bg-color: #fbfbfb;
+$sidebar-bg-color: #FAFAFA;
 $sidebar-amount-saved-text-color: #ffc766;
+
+// Modal colors
 
 // Text Colors
 $bold-text-color: #212121;

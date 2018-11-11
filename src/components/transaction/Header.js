@@ -2,13 +2,13 @@ import React from 'react';
 
 const Header = () => {
   return (
-    <div className="transaction-header">
-      <p>
+    <div className="transaction-header col">
+      <h1>
         Let's set up your transaction!
-      </p>
-      <p>
+      </h1>
+      <h2>
         Specify the amount to be sent or received.
-      </p>
+      </h2>
     </div>
   );
 };

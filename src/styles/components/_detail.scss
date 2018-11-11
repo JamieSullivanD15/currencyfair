@@ -1,34 +1,69 @@
 
+.detail {
+  color: $light-text-color;
+  background-color: white;
+  border: 2px solid $sidebar-detail-border-color;
+  border-radius: 4px;
+  overflow: hidden;
+
+  .value {
+    font-family: 'PostGrotesk-Medium';
+  }
+
+  .main-value {
+    font-family: 'PostGrotesk-Medium';
+    color: $bold-text-color;
+  }
+}
+
 .sending-detail-header {
-  background-color: blue;
+  font-weight: bold;
+  color: $bold-text-color;
+  padding: $sidebar-padding;
+  border-bottom: 1px solid  $sidebar-detail-border-color;
+  background-color: $sidebar-bg-color;
   min-height: 54px;
   align-items: center;
 }
 
 .sending-detail-amount {
-  background-color: orange;
+  padding: $sidebar-padding;
   min-height: 54px;
   align-items: center;
   justify-content: space-between;
 }
 
 .receiving-detail-header {
-  background-color: teal;
+  font-weight: bold;
+  color: $bold-text-color;
+  padding: $sidebar-padding;
+  background-color: $sidebar-bg-color;
+  border-top: 1px solid  $sidebar-detail-border-color;
+  border-bottom: 1px solid  $sidebar-detail-border-color;
   min-height: 54px;
   align-items: center;
   justify-content: space-between;
+
+  a {
+    font-weight: normal;
+  }
 }
 
 .receiving-detail-info {
-  background-color: navy;
+  padding: $sidebar-padding;
   min-height: 36px;
   align-items: center;
   justify-content: space-between;
 }
 
 .receiving-detail-footer {
-  background-color: violet;
+  font-size: 12px;
+  font-family: 'PostGrotesk-Medium';
+  color: $sidebar-amount-saved-text-color;
+  border-top: 1px solid  $sidebar-detail-border-color;
+  padding: $sidebar-padding;
   min-height: 54px;
   align-items: center;
+  justify-content: center;
   text-align: center;
 }

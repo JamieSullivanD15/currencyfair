@@ -26,15 +26,22 @@ function applyActive(e, containerClass) {
   let container = document.querySelector(`.${containerClass}`);
   let input = document.querySelector(`.${containerClass}-input`);
   let child = container.children[0];
+  let receivingForm = document.querySelector('.transaction-receiving').children[0];
+  let sendingForm = document.querySelector('.transaction-sending').children[0];
 
   // Check if the element that was clicked is a child of the container
   if (isLocalNode(container, e.target)) {
 
+
     // Remove the active class from opposite input
     if (container.className === 'transaction-sending') {
-      document.querySelector('.transaction-receiving').children[0].classList.remove('transaction-input-active');
+      receivingForm.classList.remove('transaction-input-active');
+      receivingForm.style.borderColor = '#e0e0e0';
+      sendingForm.style.borderColor = '#6ec0e6';
     } else if (container.className === 'transaction-receiving') {
-      document.querySelector('.transaction-sending').children[0].classList.remove('transaction-input-active');
+      sendingForm.classList.remove('transaction-input-active');
+      sendingForm.style.borderColor = '#e0e0e0';
+      receivingForm.style.borderColor = '#6ec0e6';
     }
 
     // Apply active class and focus on container input field
@@ -59,7 +66,11 @@ function handleSubmit(e, props) {
   // Remove active class and focus when submitted
   let input = document.querySelector(`.${props.class}-input`);
   let container = document.querySelector(`.${props.class}`);
+  let receivingForm = document.querySelector('.transaction-receiving').children[0];
+  let sendingForm = document.querySelector('.transaction-sending').children[0];
   container.children[0].classList.remove('transaction-input-active');
+  receivingForm.style.borderColor = '#e0e0e0';
+  sendingForm.style.borderColor = '#e0e0e0';
   input.blur();
 }
 
@@ -108,8 +119,12 @@ const Input = (props) => {
           onSubmit={(e) => handleSubmit(e, props)}
         >
           <div>
-            {props.label} <br/>
-            {props.symbol}
+            <span className="transaction-input-label">
+              {props.label}
+            </span> <br/>
+          <span className="transaction-input-symbol">
+              {props.symbol}
+            </span>
             <input
               min="3"
               step="0.01"

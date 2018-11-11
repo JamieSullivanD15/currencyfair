@@ -12,8 +12,8 @@ function Header() {
 function SendingAmount(props) {
   return (
     <div className="sending-detail-amount row">
-      <p className="col">You Send</p>
-      <p className="col">€{props.sending.toFixed(2)}</p>
+      <p className="label col">You send</p>
+      <p className="main-value col">€{props.sending.toFixed(2)}</p>
     </div>
   );
 }

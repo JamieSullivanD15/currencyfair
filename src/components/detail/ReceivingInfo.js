@@ -5,20 +5,20 @@ const ReceivingInfo = (props) => {
   return (
     <div className="col">
       <div className="receiving-detail-info row">
-        <p className="col">Rate</p>
-        <p className="col">{props.rate}</p>
+        <p className="label col">Rate</p>
+        <p className="value col">{props.rate}</p>
       </div>
       <div className="receiving-detail-info row">
-        <p className="col">Fee</p>
-        <p className="col">£{props.fee.toFixed(2)}</p>
+        <p className="label col">Fee</p>
+        <p className="value col">£{props.fee.toFixed(2)}</p>
       </div>
       <div className="receiving-detail-info row">
-        <p className="col">Delivery date</p>
-        <p className="col">{props.deliveryDate}</p>
+        <p className="label col">Delivery date</p>
+        <p className="value col">{props.deliveryDate}</p>
       </div>
       <div className="receiving-detail-info row">
-        <p className="col">Recipient Gets</p>
-        <p className="col">£{props.receiving.toFixed(2)}</p>
+        <p className="label col">Recipient gets</p>
+        <p className="main-value col">£{props.receiving.toFixed(2)}</p>
       </div>
     </div>
   );

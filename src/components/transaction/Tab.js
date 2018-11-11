@@ -2,7 +2,7 @@ import React from 'react';
 
 const Tab = () => {
   return (
-    <div className="transaction-tab">
+    <div className="transaction-tab row">
       <div className="tab1">
         <p>Step 1</p>
         <p>Transaction info</p>
