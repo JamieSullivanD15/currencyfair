@@ -16,14 +16,6 @@
     width: 600px;
   }
 
-  // .modal-main-input {
-  //   .input-box {
-  //     width: 45px;
-  //     height: 45px;
-  //     font-size: 32px;
-  //   }
-  // }
-
   .detail {
     grid-column: 8 / span 5;
     margin-left: 10px;
@@ -43,8 +35,7 @@
 /* Phone */
 @media (max-width: $phone-bp) {
   .modal-container {
-    width: 95%;
-    height: 50%;
+    width: 90vw;
   }
 
   .modal-main-input {

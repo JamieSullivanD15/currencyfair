@@ -8,7 +8,11 @@ const Main = (props) => {
   return (
     <div className="modal-main col">
       <div className="modal-main-top row">
-        Enter the code sent via SMS to {props.numberPrefix}{props.userNumber}
+        <p>Enter the code sent via SMS to</p> &nbsp;
+        <button className="modal-phone-number" disabled>
+          <span className="modal-phone-prefix">{props.numberPrefix}</span>
+          <span>{props.userNumber}</span>
+        </button>
       </div>
 
       <Input />

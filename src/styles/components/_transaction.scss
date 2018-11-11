@@ -99,14 +99,15 @@
 .transaction-input-flag-container {
   background-color: $sidebar-bg-color;
   min-width: 70px;
+  min-height: 25px;
   justify-content: center;
   border-radius: 50px 8px 8px 50px;
-  border: 1px solid $sidebar-detail-border-color;
+  border: 2px solid $sidebar-detail-border-color;
   padding: 9px;
 
   .transaction-input-flag {
     align-self: center;
-    max-width: 70px;
+    max-width: 62px;
   }
 }
 

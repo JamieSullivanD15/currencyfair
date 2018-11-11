@@ -3,16 +3,17 @@
   position: fixed;
   top: 0;
   left: 0;
-  width:100%;
+  width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.6);
 }
 
 .modal-container {
   max-width: 580px;
-  color: white;
-  height: 480px;
-  background-color: white;
+  color: $light-text-color;
+  min-height: 480px;
+  border-radius: 10px;
+  background-color: $sidebar-bg-color;
   z-index: 2;
   position: fixed;
   top:50%;
@@ -28,9 +29,12 @@
 }
 
 .modal-header {
-  background-color: purple;
   min-height: 130px;
   align-content: center;
+  padding: $modal-padding;
+  background-color: white;
+  border-bottom: 1px solid $sidebar-detail-border-color;
+  border-radius: 5px 5px 0 0;
 
   // .row {
   //   margin: 5px 0;
@@ -38,28 +42,76 @@
 }
 
 .modal-main {
-  background-color: maroon;
   min-height: 260px;
   justify-content: center;
+  align-content: center;
+  align-self: center;
 
   .modal-main-bottom {
     justify-content: space-between;
   }
 }
 
+.modal-main-top {
+  font-family: 'PostGrotesk-Medium';
+  color: $bold-text-color;
+  align-content: center;
+
+  p {
+    margin-top: 6px;
+  }
+
+  .modal-phone-number {
+    overflow: hidden;
+    height: 30px;
+    margin-left: 5px;
+    color: $light-text-color;
+    background-color: $sidebar-bg-color;
+    cursor: default;
+    border-color: $sidebar-detail-border-color;
+
+    &:hover {
+      background-color: $sidebar-bg-color;
+    }
+
+    .modal-phone-prefix {
+      overflow: hidden;
+      padding: 8px 2px;
+      background-color: $modal-phone-prefix-bg-color;
+      border-right: 1px solid $sidebar-detail-border-color;
+    }
+  }
+}
+
 .modal-main-input {
-  background-color: orange;
   justify-content: center;
 
   .input-box {
     text-align: center;
+    border-radius: 5px;
+    border: 1px solid $sidebar-detail-border-color;
+
+    &:focus {
+      border-color: $primary-blue;
+    }
+  }
+
+  .input-box:first-child, {
+    margin-left: 0;
+  }
+
+  .input-box:last-child{
+    margin-right: 0;
   }
 }
 
 .modal-footer {
   min-height: 90px;
-  background-color: teal;
+  background-color: white;
+  border-top: 1px solid $sidebar-detail-border-color;
   justify-content: center;
+  padding: $modal-padding;
+  border-radius: 0 0 5px 5px;
 
   .row {
     justify-content: space-between;
