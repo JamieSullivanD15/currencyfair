@@ -42,9 +42,13 @@ function checkIfComplete(e) {
     if (children[i].value === '') ++count;
   }
 
-  count === 0 ?
-    btn.classList.add('btn-is-active') :
-    btn.classList.remove('btn-is-active');
+  if (count === 0) {
+    btn.classList.remove('btn-is-disabled');
+    btn.disabled = false;
+  } else {
+    btn.classList.add('btn-is-disabled');
+    btn.disabled = true;
+  }
 }
 
 const InputBox = (props) => {

@@ -16,6 +16,12 @@ class Modal extends Component {
     firstInput.focus();
   }
 
+  componentDidMount() {
+    let verifyButton = document.querySelector('.modal-verify-identity');
+    verifyButton.classList.add('btn-is-disabled');
+    verifyButton.disabled = true;
+  }
+
   // Close modal if area outside modal container was clicked
   handleOutsideClick(e, props) {
     e.preventDefault();

@@ -9,12 +9,15 @@ const Footer = (props) => {
       <div className="row">
         <div className="row">
           <button
-            className="btn modal-verify-identity">
+            className="btn modal-verify-identity"
+            onClick={props.handleBackClick}
+          >
             Verify Identity
           </button>
           <button
             className="btn modal-back"
-            onClick={props.handleBackClick}>
+            onClick={props.handleBackClick}
+          >
             Back
           </button>
         </div>

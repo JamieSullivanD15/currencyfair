@@ -9,20 +9,24 @@ const Main = (props) => {
     <div className="modal-main col">
       <div className="modal-main-top row">
         <p>Enter the code sent via SMS to</p> &nbsp;
-        <button className="modal-phone-number" disabled>
-          <span className="modal-phone-prefix">{props.numberPrefix}</span>
-          <span>{props.userNumber}</span>
+        <button className="modal-phone-container" disabled>
+          <span className="modal-phone-prefix">
+            {props.numberPrefix}
+          </span>
+          <span className="modal-phone-number">
+            {props.userNumber}
+          </span>
         </button>
       </div>
 
       <Input />
 
       <div className="modal-main-bottom row">
-        <p className="col">
-          Receive as new code
+        <p className="row">
+          <i className="fas fa-redo-alt"></i> Receive as new code
         </p>
-        <p className="col">
-          Receive code via call instead
+        <p className="row">
+          <i className="fas fa-phone fa-flip-horizontal"></i> Receive code via call instead
         </p>
       </div>
     </div>

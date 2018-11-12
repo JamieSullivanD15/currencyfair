@@ -1,10 +1,9 @@
 
-.btn-is-active {
-  background-color: red;
-}
-
-.btn-not-active {
-  background-color: blue;
+.btn-is-disabled {
+  opacity: 0.3;
+  &:hover {
+    background-color: $primary-blue;
+  }
 }
 
 .transaction-input-active {

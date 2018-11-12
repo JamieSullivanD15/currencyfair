@@ -35,10 +35,23 @@
   background-color: white;
   border-bottom: 1px solid $sidebar-detail-border-color;
   border-radius: 5px 5px 0 0;
+  padding-right: 90px;
 
-  // .row {
-  //   margin: 5px 0;
-  // }
+  .row {
+    margin: 5px 0;
+  }
+
+  .modal-header-top {
+    font-family: 'PostGrotesk-Medium';
+    font-size: 18px;
+    color: $modal-bold-text-color;
+
+    .fas {
+      font-size: 20px;
+      opacity: 0.4;
+      margin-right: 12px;
+    }
+  }
 }
 
 .modal-main {
@@ -47,21 +60,30 @@
   align-content: center;
   align-self: center;
 
+  .fas {
+    color: $primary-blue;
+    margin-right: 8px;
+  }
+
   .modal-main-bottom {
     justify-content: space-between;
+
+    p {
+      font-size: 12px;
+    }
   }
 }
 
 .modal-main-top {
-  font-family: 'PostGrotesk-Medium';
-  color: $bold-text-color;
   align-content: center;
 
   p {
     margin-top: 6px;
+    font-family: 'PostGrotesk-Book';
+    color: $bold-text-color;
   }
 
-  .modal-phone-number {
+  .modal-phone-container {
     overflow: hidden;
     height: 30px;
     margin-left: 5px;
@@ -69,14 +91,19 @@
     background-color: $sidebar-bg-color;
     cursor: default;
     border-color: $sidebar-detail-border-color;
+    border-radius: 2px;
 
     &:hover {
       background-color: $sidebar-bg-color;
     }
 
+    .modal-phone-number {
+      padding: 0 4px;
+    }
+
     .modal-phone-prefix {
       overflow: hidden;
-      padding: 8px 2px;
+      padding: 8px 4px;
       background-color: $modal-phone-prefix-bg-color;
       border-right: 1px solid $sidebar-detail-border-color;
     }
@@ -93,6 +120,8 @@
 
     &:focus {
       border-color: $primary-blue;
+      outline-style: none;
+      box-shadow: none;
     }
   }
 
@@ -127,9 +156,23 @@
 
   .modal-verify-identity {
     min-width: 109px;
+    margin-right: 17px;
   }
 
   .modal-back {
     min-width: 67px;
+    background-color: $sidebar-bg-color;
+    border-color: $sidebar-detail-border-color;
+    color: $modal-bold-text-color;
+
+    &:hover {
+      background-color: $sidebar-detail-border-color;
+    }
+  }
+
+  a {
+    &:hover {
+      color: $button-border-color;
+    }
   }
 }
