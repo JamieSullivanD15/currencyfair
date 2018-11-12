@@ -79,22 +79,22 @@
   .transaction-input-label {
     text-transform: uppercase;
     color: $light-text-color;
-    font-family: 'PostGrotesk-Book';
+    font-family: 'PostGrotesk-Medium';
   }
 
   .transaction-input-symbol {
     color: $dark-bold-text-color;
     font-family: 'PostGrotesk-Medium';
-    font-size: 24px;
+    font-size: 22px;
   }
 
   input {
     color: $dark-bold-text-color;
     font-family: 'PostGrotesk-Medium';
-    font-size: 24px;
-    max-width: 100px;
+    font-size: 22px;
+    max-width: 140px;
     border: none;
-    margin-left: 10px;
+    margin-left: 4px;
     margin-top: 10px;
     background-color: transparent;
     outline: none;

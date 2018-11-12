@@ -138,6 +138,7 @@ const Input = (props) => {
               step="0.0001"
               type="number"
               onChange={(e) => handleChange(e, props)}
+              onBlur={(e) => handleSubmit(e, props)}
               value={props.value}
               className={`${props.class}-input`}
               name={props.name}
