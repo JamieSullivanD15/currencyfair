@@ -2,21 +2,21 @@
 .btn-is-disabled {
   opacity: 0.3;
   &:hover {
-    background-color: $primary-blue;
+    background-color: $primary-blue-color;
   }
 }
 
 .transaction-input-active {
-  background-color: $transaction-active-bg-color;
+  background-color: $primary-blue-color;
 
   .transaction-input-label {
-    color: $primary-blue;
+    color: $primary-blue-color;
   }
 }
 
 .tab-is-active {
   p {
-    color: $primary-blue;
+    color: $primary-blue-color;
     opacity: 1;
   }
 }

@@ -13,7 +13,7 @@
   color: $light-text-color;
   min-height: 480px;
   border-radius: 10px;
-  background-color: $sidebar-bg-color;
+  background-color: $dark-bg-color;
   z-index: 2;
   position: fixed;
   top:50%;
@@ -33,7 +33,7 @@
   align-content: center;
   padding: $modal-padding;
   background-color: white;
-  border-bottom: 1px solid $sidebar-detail-border-color;
+  border-bottom: 1px solid $dark-border-color;
   border-radius: 5px 5px 0 0;
   padding-right: 90px;
 
@@ -44,7 +44,7 @@
   .modal-header-top {
     font-family: 'PostGrotesk-Medium';
     font-size: 18px;
-    color: $modal-bold-text-color;
+    color: $light-bold-text-color;
 
     .fas {
       font-size: 20px;
@@ -61,7 +61,7 @@
   align-self: center;
 
   .fas {
-    color: $primary-blue;
+    color: $primary-blue-color;
     margin-right: 8px;
   }
 
@@ -80,7 +80,7 @@
   p {
     margin-top: 6px;
     font-family: 'PostGrotesk-Book';
-    color: $bold-text-color;
+    color: $dark-bold-text-color;
   }
 
   .modal-phone-container {
@@ -88,13 +88,13 @@
     height: 30px;
     margin-left: 5px;
     color: $light-text-color;
-    background-color: $sidebar-bg-color;
+    background-color: $dark-bg-color;
     cursor: default;
-    border-color: $sidebar-detail-border-color;
+    border-color: $dark-border-color;
     border-radius: 2px;
 
     &:hover {
-      background-color: $sidebar-bg-color;
+      background-color: $dark-bg-color;
     }
 
     .modal-phone-number {
@@ -105,7 +105,7 @@
       overflow: hidden;
       padding: 8px 4px;
       background-color: $modal-phone-prefix-bg-color;
-      border-right: 1px solid $sidebar-detail-border-color;
+      border-right: 1px solid $dark-border-color;
     }
   }
 }
@@ -118,14 +118,14 @@
   .input-box {
     text-align: center;
     border-radius: 5px;
-    border: 1px solid $sidebar-detail-border-color;
+    border: 1px solid $dark-border-color;
     width: 53px;
     height: 53px;
     font-size: 36px;
     margin: 0 6px;
 
     &:focus {
-      border-color: $primary-blue;
+      border-color: $primary-blue-color;
       outline-style: none;
       box-shadow: none;
     }
@@ -143,7 +143,7 @@
 .modal-footer {
   min-height: 90px;
   background-color: white;
-  border-top: 1px solid $sidebar-detail-border-color;
+  border-top: 1px solid $dark-border-color;
   justify-content: center;
   padding: $modal-padding;
   border-radius: 0 0 5px 5px;
@@ -167,18 +167,18 @@
 
   .modal-back {
     min-width: 67px;
-    background-color: $sidebar-bg-color;
-    border-color: $sidebar-detail-border-color;
-    color: $modal-bold-text-color;
+    background-color: $dark-bg-color;
+    border-color: $dark-border-color;
+    color: $light-bold-text-color;
 
     &:hover {
-      background-color: $sidebar-detail-border-color;
+      background-color: $dark-border-color;
     }
   }
 
   a {
     &:hover {
-      color: $button-border-color;
+      color: $secondary-blue-color;
     }
   }
 }

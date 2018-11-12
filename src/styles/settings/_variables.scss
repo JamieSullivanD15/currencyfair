@@ -8,29 +8,20 @@ $phone-bp: 630px;
 $sidebar-padding: 0 20px;
 $modal-padding: 0 30px;
 
-// Colors
+// Main Colors
 $header-color: #32323C;
-$primary-blue: #6ec0e6;
-
-// Transaction Colors
-$tab-active-color: $primary-blue;
-$tab-unactive-color: #e2f2fa;
-$transaction-active-bg-color: #FAFDFE;
-$transaction-active-border-color: $primary-blue;
-$transaction-unactive-border-color: #e6e6e6;
-$button-color: $primary-blue;
-$button-border-color: #589ab8;
-$modal-phone-prefix-bg-color: #F2F1F1;
-
-// Sidebar Colors
-$sidebar-detail-border-color: #e0e0e0;
-$sidebar-bg-color: #FAFAFA;
-$sidebar-amount-saved-text-color: #ffc766;
-
-// Modal colors
+$primary-blue-color: #6ec0e6;
+$secondary-blue-color: #589ab8;
+$dark-border-color: #e0e0e0;
+$dark-bg-color: #FAFAFA;
 
 // Text Colors
-$bold-text-color: #212121;
+$orange-text-color: #ffc766;
+$dark-bold-text-color: #4C4C4C;
 $light-text-color: #9E9E9E;
-$modal-bold-text-color: #768895;
+$light-bold-text-color: #768895;
 $link-text-color: #64b5f6;
+
+// Specific Colors
+$tab-unactive-color: #e2f2fa;
+$modal-phone-prefix-bg-color: #F2F1F1;

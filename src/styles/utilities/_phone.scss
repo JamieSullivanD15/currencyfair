@@ -11,7 +11,7 @@
 
   .sidebar {
     grid-column: 7 / span 6;
-    border-left: 1px solid $sidebar-detail-border-color;
+    border-left: 1px solid $dark-border-color;
   }
 
   .transaction {
@@ -68,7 +68,7 @@
     margin-right: 5px;
     margin-left: 5px;
     max-height: 360px;
-    border: 1px solid $sidebar-detail-border-color;
+    border: 1px solid $dark-border-color;
 
     .sending-detail-header, .receiving-detail-header {
       min-height: 44px;

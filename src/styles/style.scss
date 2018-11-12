@@ -3,9 +3,6 @@
 // Settings - variables, fonts
 @import './settings/settings';
 
-// Tools - mixins
-@import './tools/tools';
-
 // Elements - bare unclassed HTML elements
 @import './elements/elements';
 
@@ -15,5 +12,5 @@
 // Components - custom UI elements
 @import './components/components';
 
-// Utilities - overrides, is-active, is-hidden
+// Utilities - overrides, is-active, is-hidden, media-queries
 @import './utilities/utilities';
