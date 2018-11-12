@@ -24,4 +24,14 @@
   .logo {
     grid-column: 2 / span 4;
   }
+
+  .transaction-input-flag-container {
+    min-width: 50px;
+    min-height: 20px;
+    padding: 8px;
+
+    .transaction-input-flag {
+      max-width: 55px;
+    }
+  }
 }
