@@ -32,7 +32,6 @@ function applyActive(e, containerClass) {
   // Check if the element that was clicked is a child of the container
   if (isLocalNode(container, e.target)) {
 
-
     // Remove the active class from opposite input
     // e0e0e0 - gray border 6ec0e6 - primary blue
     if (container.className === 'transaction-sending') {
@@ -59,15 +58,15 @@ function handleChange(e, props) {
 
   // Prevent numbers greater than 8 digits
   if (e.target.value.length > 8) e.target.value = e.target.value.slice(0, 8);
-
   changeValues(e.target.value, props);
 }
 
 function handleSubmit(e, props) {
   e.preventDefault();
 
-  // Remove active class and focus when submitted
+  // Remove active class and focus when submitted, set input 2 decimal places
   let input = document.querySelector(`.${props.class}-input`);
+  let value = parseFloat(input.value);
   let container = document.querySelector(`.${props.class}`);
   let receivingForm = document.querySelector('.transaction-receiving').children[0];
   let sendingForm = document.querySelector('.transaction-sending').children[0];
@@ -75,6 +74,12 @@ function handleSubmit(e, props) {
   receivingForm.style.borderColor = '#e0e0e0';
   sendingForm.style.borderColor = '#e0e0e0';
   input.blur();
+
+  if (props.class === 'transaction-sending') {
+    props.setSendingInput(value.toFixed(2));
+  } else if (props.class === 'transaction-receiving') {
+    props.setReceivingInput(value.toFixed(2));
+  }
 }
 
 function changeValues(value, props) {
@@ -85,7 +90,7 @@ function changeValues(value, props) {
 
     // If input is empty, reset other values to zero
     if (value === '') {
-      props.setReceivingInput(0);
+      props.setReceivingInput('0.00');
       props.setSendingAmount(0);
       props.setReceivingAmount(0);
     } else {
@@ -101,7 +106,7 @@ function changeValues(value, props) {
     props.setReceivingInput(value);
 
     if (value === '') {
-      props.setSendingInput(0);
+      props.setSendingInput('0.00');
       props.setSendingAmount(0);
       props.setReceivingAmount(0);
     } else {
@@ -130,7 +135,7 @@ const Input = (props) => {
             </span>
             <input
               min="3"
-              step="0.01"
+              step="0.0001"
               type="number"
               onChange={(e) => handleChange(e, props)}
               value={props.value}
@@ -166,7 +171,7 @@ Input.propTypes = {
   label: PropTypes.string.isRequired,
   symbol: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  value: PropTypes.number.isRequired
+  value: PropTypes.any.isRequired
 }
 
 const mapStateToProps = state => ({

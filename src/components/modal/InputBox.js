@@ -2,9 +2,18 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
+import { hideModal } from '../../actions/modalActions';
+
 // Add focus to the next field when the user has entered an input
-function nextField(e) {
+function nextField(e, props) {
   const REG = /^\d+$/;
+
+  // Allow user to press enter if input is complete
+  if (e.which === 13) {
+    if (inputIsComplete()) {
+      props.hideModal();
+    }
+  }
 
   // Don't allow input or navigate to next field if value is not a number
   if (!(e.target.value.match(REG))) {
@@ -28,11 +37,7 @@ function checkLength(e) {
   }
 }
 
-// Check if input fields are complete when user enters input
-function checkIfComplete(e) {
-  e.preventDefault();
-
-  let btn = document.querySelector('.modal-verify-identity');
+function inputIsComplete() {
   let modalInput = document.querySelector('.modal-main-input');
   let children = modalInput.children;
   let count = 0;
@@ -42,7 +47,16 @@ function checkIfComplete(e) {
     if (children[i].value === '') ++count;
   }
 
-  if (count === 0) {
+  return count === 0 ? true : false;
+}
+
+// Check if input fields are complete when user enters input
+function checkIfComplete(e) {
+  e.preventDefault();
+
+  let btn = document.querySelector('.modal-verify-identity');
+
+  if (inputIsComplete()) {
     btn.classList.remove('btn-is-disabled');
     btn.disabled = false;
   } else {
@@ -57,7 +71,7 @@ const InputBox = (props) => {
       type="number"
       className="input-box"
       maxLength="1"
-      onKeyUp={nextField}
+      onKeyUp={(e) => nextField(e, props)}
       onChange={checkLength}
       onInput={checkIfComplete}
       id={'input-' + props.id}>
@@ -66,7 +80,10 @@ const InputBox = (props) => {
 };
 
 InputBox.propTypes = {
-  id: PropTypes.number.isRequired
+  id: PropTypes.number.isRequired,
+  hideModal: PropTypes.func.isRequired,
 }
 
-export default connect (null, {})(InputBox);
+export default connect (null, {
+  hideModal
+})(InputBox);

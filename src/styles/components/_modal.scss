@@ -112,11 +112,17 @@
 
 .modal-main-input {
   justify-content: center;
+  margin-top: 36px;
+  margin-bottom: 26px;
 
   .input-box {
     text-align: center;
     border-radius: 5px;
     border: 1px solid $sidebar-detail-border-color;
+    width: 53px;
+    height: 53px;
+    font-size: 36px;
+    margin: 0 6px;
 
     &:focus {
       border-color: $primary-blue;

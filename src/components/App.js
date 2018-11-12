@@ -16,7 +16,7 @@ class App extends Component {
 
   componentDidMount() {
     // Exchange rate from, to
-    // this.props.getRate('EUR', 'GBP');
+    this.props.getRate('EUR', 'GBP');
   }
 
   render() {

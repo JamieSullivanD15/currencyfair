@@ -11,8 +11,8 @@ import {
 const initialState = {
   sending: 0,
   fee: 2.50,
-  sendingInput: 0,
-  receivingInput: 0,
+  sendingInput: '0.00',
+  receivingInput: '0.00',
   deliveryDate: '25th November',
   receiving: 0,
   savings: 0,

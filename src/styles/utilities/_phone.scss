@@ -67,11 +67,20 @@
     grid-column: 7 / span 6;
     margin-right: 5px;
     margin-left: 5px;
+    max-height: 360px;
     border: 1px solid $sidebar-detail-border-color;
+
+    .sending-detail-header, .receiving-detail-header {
+      min-height: 44px;
+    }
 
     a {
       font-size: 10px;
       width: 200px;
+    }
+
+    .row {
+      margin: 1px 0;
     }
 
     .label {
