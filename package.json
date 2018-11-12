@@ -10,7 +10,7 @@
     "clean": "rimraf dist",
     "heroku-postbuild": "npm run build",
     "test": "jest",
-    "test-watch": "npm test -- --watch"
+    "test-watch": "npm test -- --watchAll"
   },
   "repository": {
     "type": "git",
