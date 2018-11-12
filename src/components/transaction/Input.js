@@ -34,13 +34,16 @@ function applyActive(e, containerClass) {
 
 
     // Remove the active class from opposite input
+    // e0e0e0 - gray border 6ec0e6 - primary blue
     if (container.className === 'transaction-sending') {
       receivingForm.classList.remove('transaction-input-active');
       receivingForm.style.borderColor = '#e0e0e0';
+      receivingForm.style.borderTopColor = '#6ec0e6';
       sendingForm.style.borderColor = '#6ec0e6';
     } else if (container.className === 'transaction-receiving') {
       sendingForm.classList.remove('transaction-input-active');
       sendingForm.style.borderColor = '#e0e0e0';
+      sendingForm.style.borderBottomColor = '#6ec0e6';
       receivingForm.style.borderColor = '#6ec0e6';
     }
 
@@ -54,8 +57,8 @@ function applyActive(e, containerClass) {
 function handleChange(e, props) {
   e.preventDefault();
 
-  // Prevent numbers greater than 9 digits
-  if (e.target.value.length > 9) e.target.value = e.target.value.slice(0, 9);
+  // Prevent numbers greater than 8 digits
+  if (e.target.value.length > 8) e.target.value = e.target.value.slice(0, 8);
 
   changeValues(e.target.value, props);
 }

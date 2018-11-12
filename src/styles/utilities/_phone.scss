@@ -1,0 +1,151 @@
+/* Phone */
+@media (max-width: $phone-bp) {
+  .logo {
+    grid-column: 1 / span 6;
+    margin-left: 5px;
+  }
+
+  .main {
+    grid-column: 1 / span 6;
+  }
+
+  .sidebar {
+    grid-column: 7 / span 6;
+    border-left: 1px solid $sidebar-detail-border-color;
+  }
+
+  .transaction {
+    margin: 61px 0 0 0;
+    grid-column: 1 / span 6;
+    margin-right: 5px;
+    margin-left: 5px;
+
+    h1 {
+      font-size: 16px;
+      margin-bottom: 5px;
+    }
+
+    h2 {
+      font-size: 12px;
+    }
+
+    .transaction-input-container {
+      min-height: 70px;
+      padding: 0 10px;
+
+      .transaction-input-label {
+        font-size: 12px;
+      }
+
+      .transaction-input-symbol {
+        font-size: 14px;
+      }
+
+      input {
+        font-size: 14px;
+        max-width: 90px;
+        border: none;
+        margin-left: 4px;
+      }
+    }
+
+    .transaction-input-flag-container {
+      display: none;
+    }
+
+    .transaction-tab {
+      justify-content: flex-start;
+
+      .tab2, .tab3 {
+        display: none;
+      }
+    }
+  } // transaction
+
+  .detail {
+    margin: 61px 0 0 0;
+    grid-column: 7 / span 6;
+    margin-right: 5px;
+    margin-left: 5px;
+    border: 1px solid $sidebar-detail-border-color;
+
+    a {
+      font-size: 10px;
+      width: 200px;
+    }
+
+    .label {
+      flex: none;
+    }
+
+    .main-value, .value {
+      width: 100%;
+    }
+
+    .main-value, .value {
+      width: 100%;
+    }
+  } // detail
+
+  .modal-container {
+    width: 85vw;
+
+    .modal-header {
+      min-height: 130px;
+      padding-right: 20px;
+
+      .modal-header-top {
+        font-size: 14px;
+
+        .fas {
+          font-size: 14px;
+          opacity: 0.4;
+          margin-right: 8px;
+        }
+      }
+
+      .modal-header-bottom {
+        font-size: 12px;
+      }
+    } // modal-header
+
+    .modal-main-top {
+      justify-content: center;
+
+      p, .modal-phone-prefix, .modal-phone-number {
+        font-size: 12px;
+      }
+    }
+
+    .modal-main-bottom {
+      .row {
+        width: 100%;
+        margin-top: 10px;
+        justify-content: center;
+      }
+
+      .fas {
+        font-size: 12px;
+        margin-right: 6px;
+      }
+    }
+
+    .modal-main-input {
+      margin: 26px 4px 10px 4px;
+
+      .input-box {
+        width: 35px;
+        height: 35px;
+        font-size: 22px;
+        margin: 0 2px;
+      }
+    } //modal-main-input
+
+    .modal-footer {
+      button {
+        margin-bottom: 10px;
+      }
+    }
+
+  } // modal-container
+}

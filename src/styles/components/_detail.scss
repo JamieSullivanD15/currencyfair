@@ -45,7 +45,17 @@
   justify-content: space-between;
 
   a {
-    font-weight: normal;
+    font-family: 'PostGrotesk-Light';
+    font-size: 11px;
+
+    &:hover {
+      color: $button-border-color;
+    }
+  }
+
+  .fas {
+    font-size: 11px;
+    margin-left: 4px;
   }
 }
 

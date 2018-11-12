@@ -6,8 +6,13 @@ import ReceivingInfo from './ReceivingInfo';
 function Header(props) {
   return (
     <div className="receiving-detail-header row">
-      <p className="col">Receiving Details</p>
-      <p className="col"><a href="#" >As of right now</a></p>
+      <p className="label col">Receiving Details</p>
+      <p className="row">
+        <a href="#" >
+          As of right now
+          <i className="fas fa-question-circle"></i>
+        </a>
+      </p>
     </div>
   );
 }
