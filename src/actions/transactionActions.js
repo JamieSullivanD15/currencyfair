@@ -43,7 +43,6 @@ export const calculateSendingAmount = (amount, rate, fee) => (dispatch) => {
   amount = (amount + fee) * (1 / rate);
   amount = parseFloat(amount.toFixed(2));
 
-
   dispatch({
     type: CALCULATE_SENDING_AMOUNT,
     payload: amount

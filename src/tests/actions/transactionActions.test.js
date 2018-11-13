@@ -15,12 +15,6 @@ const mockData = {
 
 let store;
 let expectedActions;
-let calculatedSendingAmount = (mockData.amount + mockData.fee) * (1 / mockData.rate);
-let calculatedReceivingAmount = (mockData.amount * mockData.rate) - mockData.fee;
-let calculatedSavings = (mockData.amount / 100) * mockData.savingsPercent;
-
-calculatedSendingAmount = parseFloat(calculatedSendingAmount.toFixed(2));
-calculatedReceivingAmount = parseFloat(calculatedReceivingAmount.toFixed(2));
 
 describe('Transaction Actions', () => {
 
@@ -28,7 +22,7 @@ describe('Transaction Actions', () => {
     store = mockStore({});
   });
 
-  it('should create an action to set sending amount', () => {
+  it('should create a SET_SENDING_AMOUNT action', () => {
     expectedActions = [
       { type: 'SET_SENDING_AMOUNT', payload: mockData.amount }
     ];
@@ -36,7 +30,7 @@ describe('Transaction Actions', () => {
     expect(store.getActions()).toEqual(expectedActions);
   });
 
-  it('should create an action to set receiving amount', () => {
+  it('should create a SET_RECEIVING_AMOUNT action', () => {
     expectedActions = [
       { type: 'SET_RECEIVING_AMOUNT', payload: mockData.amount }
     ];
@@ -44,7 +38,7 @@ describe('Transaction Actions', () => {
     expect(store.getActions()).toEqual(expectedActions);
   });
 
-  it('should create an action to set sending input', () => {
+  it('should create a SET_SENDING_INPUT actiont', () => {
     expectedActions = [
       { type: 'SET_SENDING_INPUT', payload: mockData.value }
     ];
@@ -52,7 +46,7 @@ describe('Transaction Actions', () => {
     expect(store.getActions()).toEqual(expectedActions);
   });
 
-  it('should create an action to set receiving input', () => {
+  it('should create a SET_RECEIVING_INPUT action', () => {
     expectedActions = [
       { type: 'SET_RECEIVING_INPUT', payload: mockData.value }
     ];
@@ -60,26 +54,37 @@ describe('Transaction Actions', () => {
     expect(store.getActions()).toEqual(expectedActions);
   });
 
-  it('should create an action to calculate sending amount', () => {
+  it('should create a CALCULATE_SENDING_AMOUNT action', () => {
+    let calculatedSendingAmount = (mockData.amount + mockData.fee) * (1 / mockData.rate);
+    calculatedSendingAmount = parseFloat(calculatedSendingAmount.toFixed(2));
+
     expectedActions = [
       { type: 'CALCULATE_SENDING_AMOUNT', payload: calculatedSendingAmount }
     ];
+
     store.dispatch(actions.calculateSendingAmount(mockData.amount, mockData.rate, mockData.fee));
     expect(store.getActions()).toEqual(expectedActions);
   });
 
-  it('should create an action to calculate receiving amount', () => {
+  it('should create a CALCULATE_RECEIVING_AMOUNT action', () => {
+    let calculatedReceivingAmount = (mockData.amount * mockData.rate) - mockData.fee;
+    calculatedReceivingAmount = parseFloat(calculatedReceivingAmount.toFixed(2));
+
     expectedActions = [
       { type: 'CALCULATE_RECEIVING_AMOUNT', payload: calculatedReceivingAmount }
     ];
+
     store.dispatch(actions.calculateReceivingAmount(mockData.amount, mockData.rate, mockData.fee));
     expect(store.getActions()).toEqual(expectedActions);
   });
 
-  it('should create an action to calculate savings amount', () => {
+  it('should create a CALCULATE_SAVINGS action', () => {
+    let calculatedSavings = (mockData.amount / 100) * mockData.savingsPercent;
+
     expectedActions = [
       { type: 'CALCULATE_SAVINGS', payload: calculatedSavings }
     ];
+
     store.dispatch(actions.calculateSavings(mockData.amount, mockData.savingsPercent));
     expect(store.getActions()).toEqual(expectedActions);
   });

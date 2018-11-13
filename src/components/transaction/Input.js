@@ -33,7 +33,7 @@ function applyActive(e, containerClass) {
   if (isLocalNode(container, e.target)) {
 
     // Remove the active class from opposite input
-    // e0e0e0 - gray border 6ec0e6 - primary blue
+    // e0e0e0 - grey border 6ec0e6 - primary blue
     if (container.className === 'transaction-sending') {
       receivingForm.classList.remove('transaction-input-active');
       receivingForm.style.borderColor = '#e0e0e0';
@@ -70,11 +70,14 @@ function handleSubmit(e, props) {
   let container = document.querySelector(`.${props.class}`);
   let receivingForm = document.querySelector('.transaction-receiving').children[0];
   let sendingForm = document.querySelector('.transaction-sending').children[0];
+
+  // Remove active class and reset input borders to grey color
   container.children[0].classList.remove('transaction-input-active');
   receivingForm.style.borderColor = '#e0e0e0';
   sendingForm.style.borderColor = '#e0e0e0';
   input.blur();
 
+  // Set inputs to 2 decimal places when submitted
   if (props.class === 'transaction-sending') {
     props.setSendingInput(value.toFixed(2));
   } else if (props.class === 'transaction-receiving') {
