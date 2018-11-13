@@ -1,4 +1,6 @@
-export const GET_RATE = 'GET_RATE';
+export const GET_RATE_REQUEST = 'GET_RATE';
+export const GET_RATE_SUCCESS = 'GET_RATE_SUCCESS';
+export const GET_RATE_FAILURE = 'GET_RATE_FAILURE';
 
 export const SHOW_MODAL = 'SHOW_MODAL';
 export const HIDE_MODAL = 'HIDE_MODAL';

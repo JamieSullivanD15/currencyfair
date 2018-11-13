@@ -179,6 +179,7 @@
   a {
     &:hover {
       color: $secondary-blue-color;
+      text-decoration: underline;
     }
   }
-}
+} // modal footer

@@ -1,34 +1,54 @@
 import rateReducer from '../../reducers/rateReducer';
-import * as actions from '../../actions/rateActions';
-import * as types from '../../actions/types';
 
 const initialState = {
-  value: 0.21
+  value: 0.86022,
+  sendingRequest: false,
+  err: 'No error'
 }
 
-const action = {
-  type: types.GET_RATE,
-  payload: 1.34
+const mockData = {
+  value: 0.89652
 }
 
-const afterState = rateReducer(initialState, action);
+let afterState;
+let action;
 
-describe('Rate Reducer', () => {
-  it('should have default state of 0.86022', () => {
-    expect(rateReducer(undefined, { type: 'UNEXPECTED'})).toEqual({
-      value: 0.86022
-    })
+describe('Rate Reducer Can Handle Actions', () => {
+
+  it('can handle UNEXPECTED', () => {
+    action = { type: 'UNEXPECTED', payload: mockData.rate };
+    expect(rateReducer(initialState , action)).toEqual(initialState);
   });
 
-  it('should be an object', () => {
-    expect(afterState).toBeInstanceOf(Object);
+  it('can handle GET_RATE_REQUEST', () => {
+    action = {
+      type: 'GET_RATE_REQUEST',
+      sendingRequest: true
+    };
+
+    afterState = rateReducer(initialState , action);
+    expect(rateReducer(initialState , action)).toEqual(afterState);
   });
 
-  it('should change value in initialState to 1.34', () => {
-    expect(afterState.value).toEqual(1.34);
+  it('can handle GET_RATE_SUCCESS', () => {
+    action = {
+      type: 'GET_RATE_SUCCESS',
+      payload: mockData.value,
+      sendingRequest: false
+    };
+
+    afterState = rateReducer(initialState , action);
+    expect(rateReducer(initialState , action)).toEqual(afterState);
   });
 
-  it('should be greater than zero', () => {
-    expect(afterState.value).toBeGreaterThan(0);
+  it('can handle GET_RATE_FAILURE', () => {
+    action = {
+      type: 'GET_RATE_FAILURE',
+      payload: 'There was an error',
+      sendingRequest: false
+    };
+
+    afterState = rateReducer(initialState , action);
+    expect(rateReducer(initialState , action)).toEqual(afterState);
   });
 });

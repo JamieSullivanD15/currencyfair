@@ -1,6 +1,8 @@
 
 .btn-is-disabled {
   opacity: 0.3;
+  cursor: default;
+
   &:hover {
     background-color: $primary-blue-color;
   }

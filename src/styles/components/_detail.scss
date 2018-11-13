@@ -49,6 +49,7 @@
     font-size: 11px;
 
     &:hover {
+      text-decoration: underline;
       color: $secondary-blue-color;
     }
   }
