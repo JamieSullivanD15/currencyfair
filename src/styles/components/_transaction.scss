@@ -17,12 +17,12 @@
   }
 
   .transaction-tab-step {
-    font-size: 10px;
+    font-size: 12px;
     margin-bottom: 2px;
   }
 
   .transaction-tab-heading {
-    font-size: 11px;
+    font-size: 14px;
   }
 
   .transaction-tab-bar {
@@ -55,8 +55,8 @@
 
 .transaction-sending {
   .transaction-input-container {
-    border: 2px solid $dark-border-color;
-    border-bottom: 1px solid $dark-border-color;
+    border: 0.1rem solid $dark-border-color;
+    border-bottom: 0.05rem solid $dark-border-color;
     border-radius: 5px 5px 0 0;
     overflow: hidden;
   }
@@ -64,8 +64,8 @@
 
 .transaction-receiving {
   .transaction-input-container {
-    border: 2px solid $dark-border-color;
-    border-top: 1px solid $dark-border-color;
+    border: 0.1rem  solid $dark-border-color;
+    border-top: 0.05px solid $dark-border-color;
     border-radius: 0 0 5px 5px;
     overflow: hidden;
   }
@@ -79,7 +79,7 @@
   .transaction-input-label {
     text-transform: uppercase;
     color: $light-text-color;
-    font-family: 'PostGrotesk-Medium';
+    font-family: 'PostGrotesk-Book';
   }
 
   .transaction-input-symbol {
@@ -107,7 +107,7 @@
   min-height: 25px;
   justify-content: center;
   border-radius: 50px 8px 8px 50px;
-  border: 2px solid $dark-border-color;
+  border: 0.11rem solid $dark-border-color;
   padding: 9px;
 
   .transaction-input-flag {
@@ -136,6 +136,7 @@
   }
 
   a {
+
     &:hover {
       color: $secondary-blue-color;
       text-decoration: underline;

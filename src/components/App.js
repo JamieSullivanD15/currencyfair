@@ -23,7 +23,6 @@ class App extends Component {
     return (
       <div className="app">
         <Modal />
-
         <div className="container">
           <Header />
           <Logo />
