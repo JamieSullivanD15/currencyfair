@@ -41,4 +41,4 @@ If deploying to Heroku, ensure there is a heroku-postbuild command that will run
 
 ## Authors
 
-* **Jamie Sullivan**
+**Jamie Sullivan**
